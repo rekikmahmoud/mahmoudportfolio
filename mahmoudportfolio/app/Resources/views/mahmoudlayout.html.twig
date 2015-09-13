@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+
+    <meta charset="utf-8"/>
+
+
+
+
+            <meta name="description" content="Je suis REKIK MAHMOUD, âgé de 25 ans, titulaire d'une licence appliquée en informatique de gestion ( à l Ecole Supérieur de Commerce de Tunis )."/>
+
+            <meta name="keywords" content="j2ee/java,php, web,html,referencement,curriculum vitae"/>
+
+            <meta name="author" content="REKIK MAHMOUD" />
+
+            <title>profolio rekik mahmoud</title>
+
+            <!-- mahmoud CSS -->
+            <link href="{{asset('css/bootstrap.min.css')  }}" rel="stylesheet">
+     <link href="{{asset('css.css')  }}" rel="stylesheet">
+     <link rel="stylesheet" href="{{asset('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')  }}">
+
+            <!--  CSS -->
+            <link href="{{asset('css/business-casual.css')  }}" rel="stylesheet">
+
+
+
+
+            <!-- Fonts -->
+            <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+            <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+     <script src="{{asset('http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js')  }}"></script>
+
+
+
+
+        <title>{% block title %}
+
+
+
+
+
+
+            {% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+     <link rel="stylesheet" href=""{{ asset('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') }}">
+
+
+
+    </head>
+    <body>
+    {% block body %}
+    <!--     Angularjs         -*-*-*-*-*- Angularjs    *-*-*-*-*-   Angularjs  *-*-*-*-*-   Angularjs
+                  *-*-*-*-*-   Angularjs  *-*-*-*-*-   Angularjs -->
+    <div ng-app="" ng-init="d={Nom:'REKIK MAHMOUD',tel:'+216 21 482 084',email:'rekikmahmoud9@gmail.com'}">
+
+
+    <div class="brand">{{ '{{ d.Nom }}' }}</div>
+    <div class="address-bar">Tel : {{'{{ d.tel }}' }}| Email :{{'{{ d.email}}' }}</div>   </div>
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+
+
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-tabs">
+                    <li>
+                        <a href="{{ path('home') }}">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('contact') }}">Contact</a>
+                    </li>
+
+                    <p class="navbar-text navbar-right">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                     {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                     <li role="presentation">
+                     <a href="{{ path('fos_user_security_logout') }}">
+                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                     </a>
+                     </li>
+                    {% else %}
+                     <li role="presentation">
+                     <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                      </li>
+                    {% endif %}
+                    <li role="presentation">
+                     <a href="{{ path('fos_user_registration_register') }}">s'inscrire<a/></li>
+
+
+
+            </p>
+            </ul>
+                </div>
+
+
+               </div>
+
+
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive img-full" src="{{asset('img/slide-1.jpg')}}" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="{{asset('img/slide-2.jpg')}}" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="{{asset('img/slide-3.jpg')}}" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h2 class="brand-before">
+                        <small></small>
+                    </h2>
+                    {% block fos_user_content %}
+                    {% block ab %}
+
+                    <h1 class="brand-name">REKIK MAHMOUD</h1>
+                    <hr class="tagline-divider">
+                    <h2>
+                        <small>By
+                            <strong>Start Bootstrap</strong>
+                        </small>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        {% endblock %}    {% endblock %}
+
+
+    </div>
+    <!-- container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy;  2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- rekik mahmoud jQuery -->
+    <script src="{{asset('js/jquery.js')  }}"></script>
+
+    <!-- rekik mahmoud JavaScript -->
+    <script src="{{asset('js/bootstrap.min.js')  }}"></script>
+
+    <!-- Script to Activate  -->
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+
+
+        {% block javascripts %}{% endblock %}
+    {% endblock %}
+    </body>
+</html>

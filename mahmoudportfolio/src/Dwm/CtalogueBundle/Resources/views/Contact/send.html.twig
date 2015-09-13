@@ -1,0 +1,77 @@
+{%  extends"::mahmoudlayout.html.twig"%}
+
+
+{% block ab %}
+
+
+
+
+
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+               <h2 class="intro-text text-center">Contactez moi
+                </h2>
+                <hr>
+            </div>
+            <div class="col-md-8">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25576.029106345177!2d10.2346469!3d36.74648375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3663fe230a85%3A0x4066f90ed86b7771!2sBen+Arous!5e0!3m2!1sen!2stn!4v1441210243477" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-4">
+                <p>Phone:
+                    <strong>+216 21 482 084</strong>
+                </p>
+                <p>Email:
+                    <strong><a href="mailto:name@example.com">rekikmahmoud9@gmail.com</a></strong>
+                     <p>Address:
+                    <strong>10 Rue Zouhair Essefi,
+                        <br> 2013 Ben Arous, Tunisie</strong>
+                </p>
+                    <iframe name="f1539ae784" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:page Facebook Social Plugin" src="http://www.facebook.com/v2.3/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F44OwK74u0Ie.js%3Fversion%3D41%23cb%3Df1433e60ac%26domain%3Dmr-rk.bati-plus.com%26origin%3Dhttp%253A%252F%252Fmr-rk.bati-plus.com%252Ff48da5c6%26relation%3Dparent.parent&amp;container_width=400&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FJava-Developer-Community%2F163999116960299%3Ffref%3Dts&amp;locale=fr_FR&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=true&amp;small_header=false" style="border: none; visibility: visible; width: 340px; height: 500px;" class=""></iframe>
+                </p>
+
+            </div>
+            <div class="clearfix"></div>
+
+
+
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">Contactez moi
+                </h2>
+                <hr>
+              {{ form_start(rekik )}}
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label>Name</label>
+                           {{ form_widget(rekik.name ,{'attr': {'class': 'form-control'}})}}
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label>Email Address</label>
+                            {{ form_widget(rekik.email,{'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label>Phone Number</label>
+                            {{ form_widget(rekik.phone,{'attr': {'class': 'form-control'}} )}}
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-lg-12">
+                            <label>Message</label>
+                            {{ form_widget(rekik.message,{'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <input type="hidden" name="save" value="contact">
+                            <button type="submit" class="btn btn-default">Envoyer</button>
+                        </div>
+                    </div>
+                {{ form_end(rekik) }}
+            </div>
+
+</div>
+
+
+<!-- /.container -->
+{% endblock %}
